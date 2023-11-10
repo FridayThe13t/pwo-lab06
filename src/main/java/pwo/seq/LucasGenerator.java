@@ -8,7 +8,7 @@ public class LucasGenerator extends FibonacciGenerator {
         current = new BigDecimal(2);
         f_2 = new BigDecimal(2);
     }
-
+/**/
     @Override
     public void reset() {
         super.reset();
