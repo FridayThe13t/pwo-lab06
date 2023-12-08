@@ -1,5 +1,7 @@
 package pwo.seq;
 
+
+
 import java.math.BigDecimal;
 
 public class FibonacciGenerator extends Generator {
@@ -20,18 +22,17 @@ public class FibonacciGenerator extends Generator {
 
     @Override
     public BigDecimal nextTerm() {
-
         if (lastIndex > 1) {
-            current = f_1.add(f_2);
-            f_2 = f_1;
-            f_1 = current;
+            current = f_2; 
+            f_1 = f_2.subtract(f_1);
+            f_2 = current; 
         } else if (lastIndex == 1) {
             current = new BigDecimal(1);
         } else {
             current = new BigDecimal(0);
         }
 
-        lastIndex++;
+        lastIndex--;
         return current;
     }
 }
